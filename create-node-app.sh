@@ -129,6 +129,3 @@ npm install
 
 # Inform user
 echo "Dependencies installed successfully"
-
-# Run the project using nodemon
-npm start
