@@ -1,23 +1,18 @@
-#!/bin/bash
 
-# Check if project name is provided
 if [ -z "$1" ]; then
     echo "Usage: $0 <project_name> [directory_path]"
     exit 1
 fi
 
-# Set directory path
 if [ -z "$2" ]; then
     directory_path="./$1"
 else
     directory_path="$2/$1"
 fi
 
-# Create project directory
 mkdir -p "$directory_path"
 cd "$directory_path"
 
-# Create directories
 mkdir src
 mkdir src/routes
 mkdir src/query
@@ -25,7 +20,6 @@ mkdir src/db
 mkdir config
 mkdir tests
 
-# Create sample files
 touch src/index.js
 touch src/routes/api.js
 touch src/query/index.js
@@ -33,7 +27,6 @@ touch src/db/connection.js
 touch config/index.js
 touch .gitignore
 
-# Create package.json
 echo '{
   "name": "'$1'",
   "version": "1.0.0",
@@ -55,7 +48,6 @@ echo '{
   }
 }' > package.json
 
-# Fill files with sample code
 echo "console.log('Server is running...');
 
 const express = require('express');
